@@ -1,3 +1,5 @@
+
+
 import pandas as pd
 df = pd.read_csv("diabetes.csv")
 df
@@ -12,3 +14,9 @@ X_train, X_test, y_train, y_test = train_test_split(
 from sklearn import svm
 clf = svm.SVC()
 clf.fit(X_train, y_train)
+
+y_pred = clf.predict(X_test)
+y_pred
+
+from sklearn.metrics import accuracy_score
+print("Accuracy :" , accuracy_score(y_test, y_pred)*100, "%")
